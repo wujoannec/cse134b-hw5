@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <form id="formy2">
+			<label for="record-id">Record ID:</label><br>
+			<input type="number" id="record-id" name="record_id"><br>
+			<label for="article-name">Article Name:</label><br>
+			<input type="text" id="article-name" name="article-name"><br>
+			<label for="article-body">Article Body:</label><br>
+			<textarea id="article-body" name="article-body" rows="10" cols="30"></textarea>
+			<input type="hidden" id="todays-date" name="todays-date" disabled><br>
+			<button id = "postButton" type="button">POST</button><br>
+			<output id="outputty"></output>
+			<script type="module">
+				import {postReq} from './methodtest.js';
+				postReq();
+			</script>
+		</form>
 
   </body>
 </html>
