@@ -6,8 +6,17 @@
     <meta name="author" content="Joanne Wu">
     <title>Method Test</title>
     <link rel="stylesheet" href="styles.css">
+		
   </head>
   <body>
+		<div>
+			<nav class="flex-nav">
+				<a href="/index.html">Home</a>
+				<a href="/methodtest.html">Method Test</a>
+				<a href="/webcomponent.html">Web Component</a>
+			</nav>
+		</div>
+		<br><br>
     <form id="formy2">
 			<label for="record-id">Record ID:</label><br>
 			<input type="number" id="record-id" name="record-id"><br>
@@ -15,12 +24,16 @@
 			<input type="text" id="article-name" name="article-name"><br>
 			<label for="article-body">Article Body:</label><br>
 			<textarea id="article-body" name="article-body" rows="10" cols="30"></textarea>
-			<input type="hidden" id="todays-date" name="todays-date" disabled><br>
+			<input type="hidden" id="todays-date" name="todays-date"><br>
 			<button id = "postButton" type="button">POST</button>
 			<button id = "getButton" type="button">GET</button>
 			<button id = "putButton" type="button">PUT</button>
 			<button id = "deleteButton" type="button">DELETE</button><br>
-			<output id="outputty"></output>
+			<br>
+			<p>Request Information</p>
+			<div id="boxing">
+				<output id="response"></output>
+			</div>
 			<script type="module">
 				import {postReq, getReq, putReq, deleteReq} from './methodtest.js';
 					postReq();

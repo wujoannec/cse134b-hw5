@@ -149,3 +149,11 @@ a{
 #experience{
   background-color: rgb(223, 197, 245);
 }
+
+#boxing{
+  background-color: rgb(255, 255, 255);
+  height: 900px;
+  width: 1090px;
+  padding: 10px;
+  border:1px solid rgb(142, 139, 139);
+}
