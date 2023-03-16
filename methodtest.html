@@ -10,17 +10,23 @@
   <body>
     <form id="formy2">
 			<label for="record-id">Record ID:</label><br>
-			<input type="number" id="record-id" name="record_id"><br>
+			<input type="number" id="record-id" name="record-id"><br>
 			<label for="article-name">Article Name:</label><br>
 			<input type="text" id="article-name" name="article-name"><br>
 			<label for="article-body">Article Body:</label><br>
 			<textarea id="article-body" name="article-body" rows="10" cols="30"></textarea>
 			<input type="hidden" id="todays-date" name="todays-date" disabled><br>
-			<button id = "postButton" type="button">POST</button><br>
+			<button id = "postButton" type="button">POST</button>
+			<button id = "getButton" type="button">GET</button>
+			<button id = "putButton" type="button">PUT</button>
+			<button id = "deleteButton" type="button">DELETE</button><br>
 			<output id="outputty"></output>
 			<script type="module">
-				import {postReq} from './methodtest.js';
-				postReq();
+				import {postReq, getReq, putReq, deleteReq} from './methodtest.js';
+					postReq();
+					getReq();
+					putReq();
+					deleteReq();
 			</script>
 		</form>
 
