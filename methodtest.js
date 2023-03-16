@@ -15,7 +15,10 @@ export function postReq() {
 		xhr.onreadystatechange = () => { // Call a function when the state changes.
 			const output = document.getElementById("response");
 			if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-				output.innerText = xhr.responseText;
+				let test = xhr.responseText.replace(/['"]+/g, '');
+				test = test.substr(1).slice(0, -1);
+				test=test.substring(0,test.length-1);
+				output.innerText = test;
 			}
 		}
 		const jsonObj = JSON.stringify({"recordId": formy2Id, "articleName": formy2Name, 
@@ -41,7 +44,9 @@ export function getReq() {
 	})
 	.then(response => response.json())
 	.then(data => {
-		output.innerText = JSON.stringify(data, null, 2);
+		let test = JSON.stringify(data, null, 10).replace(/['"]+/g, '');
+		test = test.substr(1).slice(0, -1);
+		output.innerText = test;
 	})
 	});
 } 
@@ -65,7 +70,9 @@ export function putReq() {
 			})
 			.then(response => response.json())
 			.then(data => {
-				output.innerText = JSON.stringify(data, null, 2);
+				let test = JSON.stringify(data, null, 10).replace(/['"]+/g, '');
+				test = test.substr(1).slice(0, -1);
+				output.innerText = test;
 			})
 		});
 } 
@@ -90,7 +97,10 @@ export function deleteReq() {
 			.then(response => response.json())
 			.then(data => {
 				const output = document.getElementById("response");
-				output.innerText = JSON.stringify(data, null, 2);
+				// output.innerText = 
+				let test = JSON.stringify(data, null, 10).replace(/['"]+/g, '');
+				test = test.substr(1).slice(0, -1);
+				output.innerText = test;
 			})
 		});
 } 
